@@ -1,0 +1,43 @@
+.sidebar {
+	flex: 0 0 6%;
+	background-color: $mainColor;
+	display: flex;
+	justify-content: center;
+	color: $whiteColor;
+
+	@include tap {
+		flex: 1 1 auto;
+		justify-content: flex-end;
+	}
+
+	.line {
+		$width: 2.7rem;
+		$height: 2px;
+		margin-top: 2.5rem;
+		width: $width;
+		height: $height;
+		background-color: $whiteColor;
+		cursor: pointer;
+
+		@include tap {
+			margin: 2rem;
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			background-color: currentColor;
+			width: $width;
+			height: $height;
+			display: block;
+			cursor: pointer;
+		}
+
+		&::before {
+			transform: translateY(-1rem);
+		}
+		&::after {
+			transform: translateY(0.8rem);
+		}
+	}
+}

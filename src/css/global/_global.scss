@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+
+	@include iPad {
+		font-size: 80%;
+	}
+
+	@include mobile {
+		font-size: 60%;
+	}
+}
+
+body {
+	min-height: 100vh;
+	font-family: $mainFont;
+	line-height: 1.5;
+}
+
+h1 {
+	font-size: 3rem;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+.img-responsive {
+	width: 100%;
+	object-fit: cover;
+}
+.btn {
+	outline: none;
+	padding: 1rem 1.8rem;
+	border: 0;
+	color: $whiteColor;
+	background-color: $mainColor;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 1.1rem;
+	font-family: $headFont;
+	cursor: pointer;
+
+	&:focus,
+	&:hover {
+		outline: none;
+		border: none;
+	}
+}

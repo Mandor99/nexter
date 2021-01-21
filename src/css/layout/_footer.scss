@@ -1,0 +1,40 @@
+.footer {
+	background-color: $secColor;
+	padding: 4rem;
+	// margin-top: 1rem;
+
+	&__nav {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+		grid-gap: 2rem;
+		justify-content: center;
+		align-items: center;
+
+		&--item {
+			font-weight: 300;
+			text-align: center;
+			font-size: 1rem;
+			transition: all 0.2s ease-in-out;
+			padding: 1rem;
+
+			&:hover {
+				background-color: rgba($color: $whiteColor, $alpha: 0.05);
+				transform: translateY(-3px);
+			}
+
+			&-link {
+				color: $whiteColor;
+				font-family: $headFont;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	&__rights {
+		font-size: 1rem;
+		color: $whiteColor;
+		opacity: 0.5;
+		text-align: center;
+		margin-top: 3rem;
+	}
+}

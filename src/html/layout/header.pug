@@ -1,0 +1,26 @@
+header.header
+    section.header__home
+        figure.header__home--logo
+            img(src="../../img/logo.png", alt="logo")
+        h2 your own home:
+        h4 The ultimate personal freedom
+        button.btn.header__home--btn view our properties
+        h5 Seen on
+        figure.header__home--clients
+            img(src="../../img/logo-bbc.png", alt="BBC")
+            img(src="../../img/logo-forbes.png", alt="FORBES")
+            img(src="../../img/logo-techcrunch.png", alt="TECHCRUNCH")
+            img(src="../../img/logo-bi.png", alt="BUSINESS  INSIDER")
+    section.header__creators
+        h2.header__creators--heading TOP 3 REALTORS
+        section.header__creators--top
+            -const obj1 = {pic: '1', name: 'Erik Feinman', sold: '245'}
+            -const obj2 = {pic: '2', name: 'Kim Brown', sold: '212'}
+            -const obj3 = {pic: '3', name: 'Toby Ramsey', sold: '198'}
+            -const creators = [obj1, obj2, obj3]
+            each creator in creators
+                figure.header__creators--pic
+                    img(src=`../../img/realtor-${creator.pic}.jpeg`, alt="creator")
+                article.header__creators--details
+                    h3.header__creators--name #{creator.name}
+                    p.header__creators--sold #{creator.sold} HOUSES SOLD

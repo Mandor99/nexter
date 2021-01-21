@@ -1,0 +1,28 @@
+$iPad: 1100px;
+$tap: 815px;
+$small: 700px;
+$mobile: 576px;
+
+@mixin iPad {
+	@media (max-width: #{$iPad}) {
+		@content;
+	}
+}
+
+@mixin tap {
+	@media (max-width: #{$tap}) {
+		@content;
+	}
+}
+
+@mixin small {
+	@media (max-width: #{$small}) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media (max-width: #{$mobile}) {
+		@content;
+	}
+}

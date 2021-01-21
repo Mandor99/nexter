@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Nexter
+        include ../component/links
+    body
+        main#wrapper
+            include ../layout/sidebar
+            section#home
+                include ../layout/header
+
+                section.features
+                    -const feature1 = {icon:"global", head: "World's best luxury homes", details: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur distinctio necessitatibus pariatur voluptatibus."}
+                    -const feature2 = {icon:"trophy", head: "Only the best properties", details: "Voluptatum mollitia quae. Vero ipsum sapiente molestias accusamus rerum sed a eligendi aut quia."}
+                    -const feature3 = {icon:"map-pin", head: "All homes in top locations", details: "Tenetur distinctio necessitatibus pariatur voluptatibus quidem consequatur harum."}
+                    -const feature4 = {icon:"key", head: "New home in one week", details: "Vero ipsum sapiente molestias accusamus rerum. Lorem, ipsum dolor sit amet consectetur adipisicing elit."}
+                    -const feature5 = {icon:"presentation", head: "Top 1% realtors", details: "Quidem consequatur harum, voluptatum mollitia quae. Tenetur distinctio necessitatibus pariatur voluptatibus."}
+                    -const feature6 = {icon:"lock", head: "Secure payments on nexter", details: "Pariatur voluptatibus quidem consequatur harum, voluptatum mollitia quae"}
+                    -const features = [feature1, feature2, feature3, feature4, feature5, feature6]
+                    each feature in features
+                        section.feature
+                            figure.feature__pic
+                                svg.feature__icon
+                                    use(xlink:href=`../../img/sprite.svg#icon-${feature.icon}`)
+                            h3.feature__heading #{feature.head}
+                            p.feature--content #{feature.details}
+
+                section.life
+                    figure.life__house
+                            img.img-responsive.life__house--pic1(src="../../img/story-1.jpeg", alt="house")
+                            img.img-responsive.life__house--pic2(src="../../img/story-2.jpeg", alt="house")
+                    article.life__decision
+                        h4.life__decision--client happy customers
+                        h3.life__decision--live &ldquo; The best decision of your lives &rdquo;
+                        p.life__decision--details Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur distinctio necessitatibus pariatur voluptatibus. Quidem consequatur harum volupta!
+                        button.btn.life__decision--btn find your own home
+
+                section.cards
+                    -const card1 = {pic:1, name: "Beautiful Family House", city: "USA", rooms: "5",area: "325", price: "1,200,000"}
+                    -const card2 = {pic:2, name: "Modern Glass Villa", city: "Canada", rooms: "6",area: "450", price: "2,750,000"}
+                    -const card3 = {pic:3, name: "Cozy country house", city: "UK", rooms: "4",area: "250", price: "850,000"}
+                    -const card4 = {pic:4, name: "Large Rustical Villa", city: "Portugal", rooms: "6",area: "480", price: "1,950,000"}
+                    -const card5 = {pic:5, name: "Majestic Palace House", city: "Germany", rooms: "18",area: "4230", price: "9,500,000"}
+                    -const card6 = {pic:6, name: "Modern Family Apartment", city: "Italy", rooms: "3",area: "180", price: "600,000"}
+                    -const cards = [card1, card2, card3, card4, card5, card6]
+                    each card in cards
+                        section.card
+                            figure.card__pic
+                                img.img-responsive(src=`../../img/house-${card.pic}.jpeg`, alt="house")
+                            svg.card__icon
+                                use(xlink:href=`../../img/sprite.svg#icon-heart-full`)
+                            h4.btn.card__name #{card.name}
+                            p.card__info.card__info--city #{card.city}
+                            p.card__info.card__info--rooms #{card.rooms} rooms
+                            p.card__info.card__info--area #{card.area} &#13217;
+                            p.card__info.card__info--price &#36;#{card.price}
+                            button.btn.card__btn contact realtor
+
+                section.gallery
+                    -for(let img=1; img <= 14; img +=1)
+                        figure.gallery__pic(class=`gallery__pic--${img}`)
+                            img.img-responsive(src=`../../img/gal-${img}.jpeg`, alt="gallery picture")
+                include ../layout/footer
+
+        script(src="../../js/index.js")
