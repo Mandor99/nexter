@@ -20,7 +20,7 @@ const htmlTask = () => {
 		.pipe(pug())
 		.pipe(concat('index.html'))
 		.pipe(sourceMap.write('.'))
-		.pipe(dest('dist/html/pages/'))
+		.pipe(dest('dist/'))
 		.pipe(connect.reload());
 };
 const cssTask = () => {
